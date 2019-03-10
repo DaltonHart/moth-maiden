@@ -11,8 +11,6 @@ class Nav extends Component {
     return (
         <Menu className="nav" size='small'>
         <Menu.Item name='MOTH MAIDEN | Tattoo & PMU' />
-
-
         <Menu.Menu position='right'>
         <Menu.Item
           name='Clients'
