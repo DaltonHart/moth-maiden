@@ -9,7 +9,7 @@ class Nav extends Component {
   render() {
     const { activeItem } = this.state
     return (
-        <Menu size='small'>
+        <Menu className="nav" size='small'>
         <Menu.Item name='MOTH MAIDEN | Tattoo & PMU' />
 
 
