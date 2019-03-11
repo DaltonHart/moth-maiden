@@ -32,7 +32,33 @@
   }
 }
 .nav {
-  background: #ee9b3c !important;
+  background-color: #E3D170 !important;
+  margin-bottom: 0 !important;
+  border-radius: 0 !important;
+}
+.nav .item {
+  color: white !important;
+  font-size: 1.4em;
+}
+
+.subnav {
+  margin-top: 0 !important;
+  border-radius: 0 !important;
+}
+.subnav .item {
+  color: white !important;
+}
+
+.client {
+  background-color: #93CAA4 !important;
+}
+
+.student {
+  background-color: #93CAA4 !important;
+}
+
+.clientpg {
+  height: 91.3vh;
 }
 
 /*# sourceMappingURL=index.css.map */
