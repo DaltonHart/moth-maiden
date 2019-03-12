@@ -7,7 +7,9 @@ class Client extends Component {
     }
     return (
       <div style={style} className="clientpg">
-      <h1>Client page</h1>
+        <div className="over">
+
+        </div>
       </div>
     );
   }
