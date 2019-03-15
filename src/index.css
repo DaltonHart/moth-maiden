@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .App-logo {
@@ -63,6 +65,19 @@
   height: 91vh;
   width: 100%;
   overflow: scroll;
+}
+
+.over {
+  overflow: hidden;
+  height: 91vh;
+}
+
+#book {
+  position: absolute;
+  bottom: 3%;
+  right: 3%;
+  font-size: 1.5em;
+  z-index: 200;
 }
 
 /*# sourceMappingURL=index.css.map */
