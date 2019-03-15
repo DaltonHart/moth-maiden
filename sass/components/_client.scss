@@ -1,4 +1,4 @@
-.clientpg{
+.clientpg {
     height: 91vh;
     width: 100%;
     overflow: scroll;
@@ -9,10 +9,27 @@
     height: 91vh;
 }
 
-#book{
-    position:absolute;
-    bottom:3%;
-    right:3%;
+#book {
+    position: absolute;
+    bottom: 3%;
+    right: 3%;
     font-size: 1.5em;
     z-index: 200;
+    background-color: #E3D170 !important;
+    color: white !important;
+}
+
+#submit {
+    font-size: 1.5em;
+}
+
+.modaldesc {
+    display: flex !important;
+    flex-direction: column !important;
+    font-size: 1em;
+}
+
+.checkbox {
+    margin: .5em 0;
+    font-size: 1.3em;
 }
