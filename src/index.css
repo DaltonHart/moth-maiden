@@ -35,6 +35,7 @@
   background-color: #E3D170 !important;
   margin-bottom: 0 !important;
   border-radius: 0 !important;
+  height: 5vh;
 }
 .nav .item {
   color: white !important;
@@ -44,6 +45,7 @@
 .subnav {
   margin-top: 0 !important;
   border-radius: 0 !important;
+  height: 4vh;
 }
 .subnav .item {
   color: white !important;
@@ -58,7 +60,9 @@
 }
 
 .clientpg {
-  height: 91.3vh;
+  height: 91vh;
+  width: 100%;
+  overflow: scroll;
 }
 
 /*# sourceMappingURL=index.css.map */
