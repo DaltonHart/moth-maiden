@@ -7,18 +7,48 @@ import {
 	Checkbox
 } from "semantic-ui-react";
 
+const requirements = ["one", "two", "three"];
 class Bookbutton extends Component {
 	state = {
 		modalOpen: false,
-		canSubmit: false
+		canBook: false
 	};
+
+	componentDidMount() {
+		requirements.forEach((option, key) => {
+			this.setState({ [key]: false });
+		});
+	}
 
 	show = size => () => this.setState({ size, open: true });
 
 	close = () => this.setState({ open: false });
 
+	handleOption = optionNum => e => {
+		console.log("clicked", e.target.value);
+		this.setState({ [optionNum]: [e.target.value] });
+	};
+
 	render() {
-		const { open, size } = this.state;
+		const { open, size, canBook } = this.state;
+
+		let book;
+		canBook
+			? (book = (
+					<Button id="submit" color="green" fluid onClick={this.close}>
+						Book
+					</Button>
+			  ))
+			: (book = (
+					<Button disabled id="submit" color="grey" fluid onClick={this.close}>
+						Book
+					</Button>
+			  ));
+
+		let options = requirements.map((option, key) => {
+			return <Checkbox onClick={this.handleOption(key)} label={option} />;
+		});
+
 		return (
 			<div className="bookbutton">
 				<Modal
@@ -28,7 +58,7 @@ class Bookbutton extends Component {
 						</Button>
 					}
 					dimmer="inverted"
-					onClose={this.handleClose}
+					onClose={this.close}
 					size={size}
 					open={open}
 				>
@@ -38,27 +68,8 @@ class Bookbutton extends Component {
 						</Button> */}
 						<Header>A few Questions to get you ready.</Header>
 					</Modal.Header>
-					<Modal.Content className="modaldesc">
-						<Checkbox
-							name="one"
-							label="This is a long option to check if they are ready."
-						/>
-						<Checkbox
-							name="two"
-							label="This is a long option to check if they are ready."
-						/>
-						<Checkbox
-							name="three"
-							label="This is a long option to check if they are ready."
-						/>
-						<Checkbox
-							name="four"
-							label="This is a long option to check if they are ready."
-						/>
-					</Modal.Content>
-					<Button id="submit" color="green" fluid onClick={this.close}>
-						Book
-					</Button>
+					<Modal.Content className="modaldesc">{options}</Modal.Content>
+					{book}
 				</Modal>
 			</div>
 		);
