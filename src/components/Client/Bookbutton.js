@@ -1,13 +1,7 @@
-import React, { Component } from "react";
-import {
-	Button,
-	Header,
-	Modal,
-	ModalActions,
-	Checkbox
-} from "semantic-ui-react";
+import React, { Component } from 'react';
+import { Button, Header, Modal } from 'semantic-ui-react';
 
-const requirements = ["one", "two", "three"];
+const requirements = ['one', 'two', 'three'];
 class Bookbutton extends Component {
 	state = {
 		modalOpen: false,
@@ -25,8 +19,9 @@ class Bookbutton extends Component {
 	close = () => this.setState({ open: false });
 
 	handleOption = optionNum => e => {
-		console.log("clicked", e.target.value);
-		this.setState({ [optionNum]: [e.target.value] });
+		const checked = e.target.checked;
+		console.log('clicked', e.target.checked);
+		this.setState({ [optionNum]: checked });
 	};
 
 	render() {
@@ -46,22 +41,26 @@ class Bookbutton extends Component {
 			  ));
 
 		let options = requirements.map((option, key) => {
-			return <Checkbox onClick={this.handleOption(key)} label={option} />;
+			return (
+				<div className="ui checkbox" key={key}>
+					<input type="checkbox" name={key} onClick={this.handleOption(key)} />
+					<label>{option}</label>
+				</div>
+			);
 		});
 
 		return (
 			<div className="bookbutton">
 				<Modal
 					trigger={
-						<Button onClick={this.show("small")} id="book">
+						<Button onClick={this.show('small')} id="book">
 							Book an Appointment
 						</Button>
 					}
 					dimmer="inverted"
 					onClose={this.close}
 					size={size}
-					open={open}
-				>
+					open={open}>
 					<Modal.Header>
 						{/* <Button color="red" onClick={this.handleClose}>
 							X

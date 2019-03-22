@@ -34,7 +34,7 @@
   }
 }
 .nav {
-  background-color: #E3D170 !important;
+  background-color: #e3d170 !important;
   margin-bottom: 0 !important;
   border-radius: 0 !important;
   height: 5vh;
@@ -54,11 +54,11 @@
 }
 
 .client {
-  background-color: #93CAA4 !important;
+  background-color: #93caa4 !important;
 }
 
 .student {
-  background-color: #93CAA4 !important;
+  background-color: #93caa4;
 }
 
 .clientpg {
