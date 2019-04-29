@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Menu } from "semantic-ui-react";
+import React, { Component } from 'react';
+import { Menu } from 'semantic-ui-react';
 
 class Nav extends Component {
 	render() {
@@ -8,14 +8,14 @@ class Nav extends Component {
 
 		let subNav;
 
-		if (activeItem === "Clients") {
+		if (activeItem === 'Clients') {
 			subNav = (
 				<Menu className="subnav client" size="small">
 					<Menu.Item name="clientsub" />
 					<Menu.Menu position="right" />
 				</Menu>
 			);
-		} else if (activeItem === "Students") {
+		} else if (activeItem === 'Students') {
 			subNav = (
 				<Menu className="subnav student" size="small">
 					<Menu.Item name="Student Sub" />
@@ -23,7 +23,7 @@ class Nav extends Component {
 				</Menu>
 			);
 		} else {
-			subNav = "";
+			subNav = '';
 		}
 		return (
 			<div>
@@ -32,12 +32,12 @@ class Nav extends Component {
 					<Menu.Menu position="right">
 						<Menu.Item
 							name="Clients"
-							active={activeItem === "Clients"}
+							active={activeItem === 'Clients'}
 							onClick={this.props.handleItemClick}
 						/>
 						<Menu.Item
 							name="Students"
-							active={activeItem === "Students"}
+							active={activeItem === 'Students'}
 							onClick={this.props.handleItemClick}
 						/>
 					</Menu.Menu>

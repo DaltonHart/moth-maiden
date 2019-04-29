@@ -5,7 +5,8 @@ const requirements = ['one', 'two', 'three'];
 class Bookbutton extends Component {
 	state = {
 		modalOpen: false,
-		canBook: false
+		canBook: false,
+		options: []
 	};
 
 	componentDidMount() {
