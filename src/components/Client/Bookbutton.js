@@ -1,28 +1,47 @@
 import React, { Component } from 'react';
-import { Button, Header, Modal } from 'semantic-ui-react';
+import { Button, Header, Modal, Icon } from 'semantic-ui-react';
 
-const requirements = ['one', 'two', 'three'];
+const requirements = [
+	'I am over the age of 18.',
+	'I am free of all blood-thinning medications.',
+	'I agree to disclosure any medical conditions, daily medications, or allergies prior to booking.'
+];
 class Bookbutton extends Component {
 	state = {
 		modalOpen: false,
 		canBook: false,
-		options: []
+		totalChecked: 0
 	};
 
-	componentDidMount() {
-		requirements.forEach((option, key) => {
-			this.setState({ [key]: false });
-		});
-	}
+	componentDidMount() {}
 
 	show = size => () => this.setState({ size, open: true });
 
 	close = () => this.setState({ open: false });
 
-	handleOption = optionNum => e => {
-		const checked = e.target.checked;
-		console.log('clicked', e.target.checked);
-		this.setState({ [optionNum]: checked });
+	handleOption = e => {
+		console.log(e.target.checked);
+		if (e.target.checked === true) {
+			this.setState({
+				totalChecked: this.state.totalChecked + 1
+			});
+			console.log('trigger checked');
+			console.log(this.state.totalChecked, requirements.length - 1);
+			if (this.state.totalChecked === requirements.length - 1) {
+				this.setState({
+					canBook: true
+				});
+			}
+		} else {
+			this.setState({
+				totalChecked: this.state.totalChecked - 1
+			});
+			if (this.state.totalChecked !== requirements.length - 1) {
+				this.setState({
+					canBook: false
+				});
+			}
+		}
 	};
 
 	render() {
@@ -31,7 +50,12 @@ class Bookbutton extends Component {
 		let book;
 		canBook
 			? (book = (
-					<Button id="submit" color="green" fluid onClick={this.close}>
+					<Button
+						as="a"
+						href="https://square.site/appointments/book/1MK0H2ZGAJ2ME/moth-maiden-tattoo-pmu-fresno-ca"
+						id="submit"
+						color="green"
+						fluid>
 						Book
 					</Button>
 			  ))
@@ -44,8 +68,13 @@ class Bookbutton extends Component {
 		let options = requirements.map((option, key) => {
 			return (
 				<div className="ui checkbox" key={key}>
-					<input type="checkbox" name={key} onClick={this.handleOption(key)} />
-					<label>{option}</label>
+					<input
+						type="checkbox"
+						id={key}
+						name={key}
+						onClick={this.handleOption}
+					/>
+					<label for={key}>{option}</label>
 				</div>
 			);
 		});
@@ -55,7 +84,8 @@ class Bookbutton extends Component {
 				<Modal
 					trigger={
 						<Button onClick={this.show('small')} id="book">
-							Book an Appointment
+							Book Now
+							<Icon className="hand" name="hand point left" />
 						</Button>
 					}
 					dimmer="inverted"

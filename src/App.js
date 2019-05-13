@@ -8,7 +8,7 @@ class App extends Component {
 	handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
 	render() {
-		const { activeItem } = this.state;
+		const { activeItem, isHide } = this.state;
 		let page;
 		if (activeItem === 'Clients') {
 			page = <Client />;
@@ -17,12 +17,14 @@ class App extends Component {
 		} else {
 			page = '';
 		}
+
 		return (
-			<div className="App">
+			<div className="App" onScroll={this.hideBar}>
 				<Nav
 					handleItemClick={this.handleItemClick}
 					activeItem={this.state.activeItem}
 				/>
+
 				{page}
 			</div>
 		);

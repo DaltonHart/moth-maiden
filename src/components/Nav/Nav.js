@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Menu } from 'semantic-ui-react';
+import { Menu, Icon } from 'semantic-ui-react';
+
+import moth from '../assets/moth.png';
 
 class Nav extends Component {
 	render() {
@@ -25,25 +27,41 @@ class Nav extends Component {
 		} else {
 			subNav = '';
 		}
+
+		let style = {
+			backgroundColor: '#ffc74f'
+		};
+
 		return (
-			<div>
-				<Menu className="nav" size="small">
-					<Menu.Item name={companyname} />
+			<>
+				<Menu style={style} className="nav" size="small" fixed="top">
+					<Menu.Item>
+						<img
+							src={moth}
+							style={{
+								filter: 'invert(100%)'
+							}}
+							alt="logo"
+						/>
+						{companyname}
+					</Menu.Item>
 					<Menu.Menu position="right">
 						<Menu.Item
 							name="Clients"
 							active={activeItem === 'Clients'}
-							onClick={this.props.handleItemClick}
-						/>
+							onClick={this.props.handleItemClick}>
+							<Icon name="tint" /> Services
+						</Menu.Item>
 						<Menu.Item
 							name="Students"
 							active={activeItem === 'Students'}
-							onClick={this.props.handleItemClick}
-						/>
+							onClick={this.props.handleItemClick}>
+							<Icon name="book" /> Training
+						</Menu.Item>
 					</Menu.Menu>
 				</Menu>
-				{subNav}
-			</div>
+				{/* {subNav} */}
+			</>
 		);
 	}
 }

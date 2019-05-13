@@ -1,4 +1,4 @@
-# Moth-Maiden site revamp. 
+# Moth-Maiden site revamp.
 
 # Brow
 
@@ -10,17 +10,11 @@
 
 textured wood and mixed metals feel is desired
 
-
-current point 
+current point
 
 2 halves to site
 
-- client 
-	- permant makeup 
-	- plasma skin
-- student 
-	- traing 
+- client - permant makeup - plasma skin
+- student - traing
 
-heroku deployment 
-	- domain 
-	- namecheap url
+heroku deployment - domain - namecheap url

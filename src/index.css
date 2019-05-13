@@ -1,7 +1,6 @@
+@import url("https://fonts.googleapis.com/css?family=Lato");
 .App {
   text-align: center;
-  height: 100vh;
-  overflow: hidden;
 }
 
 .App-logo {
@@ -34,10 +33,10 @@
   }
 }
 .nav {
-  background-color: #e3d170 !important;
   margin-bottom: 0 !important;
   border-radius: 0 !important;
   height: 5vh;
+  z-index: 300 !important;
 }
 .nav .item {
   color: white !important;
@@ -45,7 +44,7 @@
 }
 
 .subnav {
-  margin-top: 0 !important;
+  margin: 0 !important;
   border-radius: 0 !important;
   height: 4vh;
 }
@@ -54,22 +53,41 @@
 }
 
 .client {
-  background-color: #93caa4 !important;
+  background-color: #184f30 !important;
 }
 
 .student {
-  background-color: #93caa4;
+  background-color: #184f30 !important;
 }
 
 .clientpg {
-  height: 91vh;
+  height: 100vh;
   width: 100%;
-  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.clientpg::-webkit-scrollbar {
+  width: 0px;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */
+}
+
+.overLanding {
+  overflow: hidden;
+  height: 105vh;
+  position: relative;
 }
 
 .over {
+  position: relative;
+  height: 100vh;
+}
+
+.sectionFull {
   overflow: hidden;
-  height: 91vh;
+  height: 100vh;
+  position: relative;
 }
 
 #book {
@@ -78,8 +96,16 @@
   right: 3%;
   font-size: 1.5em;
   z-index: 200;
-  background-color: #E3D170 !important;
+  background-color: #ffc64f !important;
   color: white !important;
+  transition: all 0.2s ease-in-out;
+  -webkit-box-shadow: -1px 6px 14px -1px #3d3b3d;
+  -moz-box-shadow: -1px 6px 14px -1px #3d3b3d;
+  box-shadow: -1px 6px 14px -1px #3d3b3d;
+}
+
+#book:hover {
+  transform: scale(1.2);
 }
 
 #submit {
@@ -95,6 +121,156 @@
 .checkbox {
   margin: 0.5em 0;
   font-size: 1.3em;
+}
+
+.fullscreen-video-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  min-width: 100%;
+  height: auto;
+  min-height: 100%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: -1;
+}
+.fullscreen-video-wrap video {
+  /* Make video to at least 100% wide and tall */
+  min-width: 100%;
+  min-height: 100%;
+  /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+  width: auto;
+  height: auto;
+  /* Center the video */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0), rgba(255, 0, 0, 0), rgba(255, 0, 0, 0), black);
+  z-index: 1;
+}
+
+.overlayInvert {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to top, rgba(255, 0, 0, 0), rgba(255, 0, 0, 0), rgba(255, 0, 0, 0), black);
+  z-index: 1;
+}
+
+.overlayContent {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: max-content;
+  z-index: 3;
+}
+
+.overlayContent2 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  z-index: 3;
+}
+
+.hand {
+  margin-left: 0.3em !important;
+  -webkit-animation: mover 1s infinite alternate;
+  animation: mover 1s infinite alternate;
+}
+
+@-webkit-keyframes mover {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-10px);
+  }
+}
+@keyframes mover {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-10px);
+  }
+}
+.compTitle {
+  font-size: 5em !important;
+  padding: 1em;
+  color: white;
+  text-shadow: 2px 2px 8px #000000;
+}
+
+.team {
+  padding: 1em;
+  position: relative;
+}
+.team h1 {
+  font-size: 3em !important;
+}
+
+.content {
+  z-index: 10;
+  position: relative;
+}
+
+.services {
+  padding: 1em;
+}
+
+.tiles {
+  padding: 6vh 6vw;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+}
+
+.tile {
+  margin: 15px;
+  cursor: pointer;
+  overflow: hidden;
+  width: 18vw;
+  height: 18vw;
+}
+.tile img {
+  width: 100%;
+  transition: transform 500ms ease;
+}
+.tile img:hover {
+  transform: scale(1.1);
+}
+
+.modalImg {
+  width: 100%;
+}
+
+.student {
+  height: 100vh;
+  width: 100%;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.student::-webkit-scrollbar {
+  width: 0px;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */
 }
 
 /*# sourceMappingURL=index.css.map */

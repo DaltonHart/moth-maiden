@@ -1,8 +1,8 @@
 .nav {
-	background-color: #e3d170 !important;
 	margin-bottom: 0 !important;
 	border-radius: 0 !important;
 	height: 5vh;
+	z-index: 300 !important;
 
 	.item {
 		color: white !important;
@@ -11,7 +11,7 @@
 }
 
 .subnav {
-	margin-top: 0 !important;
+	margin: 0 !important;
 	border-radius: 0 !important;
 	height: 4vh;
 
@@ -21,9 +21,9 @@
 }
 
 .client {
-	background-color: #93caa4 !important;
+	background-color: #184f30 !important;
 }
 
 .student {
-	background-color: #93caa4 !important;
+	background-color: #184f30 !important;
 }

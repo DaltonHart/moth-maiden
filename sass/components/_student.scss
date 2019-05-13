@@ -1,0 +1,11 @@
+.student {
+	height: 100vh;
+	// padding-top: 5vh;
+	width: 100%;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+.student::-webkit-scrollbar {
+	width: 0px; /* Remove scrollbar space */
+	background: transparent; /* Optional: just make scrollbar invisible */
+}
