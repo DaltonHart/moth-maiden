@@ -1,8 +1,8 @@
 import React from 'react';
 
-import one from '../assets/parrOne.png';
-let parallax4 = {
-	backgroundImage: `url(${one})`,
+import training from '../assets/training.png';
+let parallax3 = {
+	backgroundImage: `url(${training})`,
 	height: '70vh',
 	backgroundAttachment: 'fixed',
 	backgroundPosition: 'center',
@@ -13,9 +13,9 @@ let parallax4 = {
 	alignItems: 'center'
 };
 
-const Team = () => {
+const Training = () => {
 	return (
-		<div style={parallax4}>
+		<div style={parallax3}>
 			<div
 				className="title"
 				style={{
@@ -29,11 +29,11 @@ const Team = () => {
 					alignItems: 'center'
 				}}>
 				<p style={{ fontSize: '7em', textShadow: '5px 5px 5px #000000' }}>
-					Team
+					Training
 				</p>
 			</div>
 		</div>
 	);
 };
 
-export default Team;
+export default Training;
