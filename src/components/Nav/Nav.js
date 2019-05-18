@@ -1,18 +1,29 @@
 import React, { Component } from 'react';
-import { Menu, Icon } from 'semantic-ui-react';
+import { Menu } from 'semantic-ui-react';
 
-import { Link, Element, Events, animateScroll as Scroll } from 'react-scroll';
+import { Link, animateScroll as Scroll } from 'react-scroll';
+import { withRouter } from 'react-router-dom';
 
 import moth from '../assets/moth.png';
 import Bookbutton from '../Client/Bookbutton';
 
 class Nav extends Component {
+	state = { activeItem: 'Home' };
+
+	handleItemClick = (e, { name }) => this.setState({ activeItem: name });
+
 	scrollToTop = () => {
 		Scroll.scrollToTop();
 	};
+	redirectHome = () => {
+		this.props.history.push('/');
+	};
+	redirectServices = e => {
+		this.props.history.push('/services');
+	};
 
 	render() {
-		const { activeItem } = this.props;
+		const { activeItem, location } = this.props;
 
 		let style = {
 			backgroundColor: '#b87333'
@@ -24,7 +35,9 @@ class Nav extends Component {
 					<Menu.Item
 						name="Home"
 						active={activeItem === 'Home'}
-						onClick={this.scrollToTop}>
+						onClick={
+							location.pathname === '/' ? this.scrollToTop : this.redirectHome
+						}>
 						<img
 							src={moth}
 							style={{
@@ -37,33 +50,35 @@ class Nav extends Component {
 						<Menu.Item
 							name="About"
 							active={activeItem === 'About'}
-							onClick={this.props.handleItemClick}>
-							<Link
-								style={{ color: 'white' }}
-								activeClass="active"
-								to="about"
-								smooth={true}
-								offset={-100}
-								duration={500}>
-								About
-							</Link>
+							onClick={this.redirectHome}>
+							{location.pathname === '/' ? (
+								<Link
+									style={{ color: 'white' }}
+									activeClass="active"
+									to="about"
+									smooth={true}
+									offset={-100}
+									duration={500}>
+									About
+								</Link>
+							) : null}
 						</Menu.Item>
 						<Menu.Item
-							name="Clients"
-							active={activeItem === 'Clients'}
-							onClick={this.props.handleItemClick}>
+							name="Services"
+							active={activeItem === 'Services'}
+							onClick={this.redirectServices}>
 							Services
 						</Menu.Item>
 						<Menu.Item
 							name="Training"
 							active={activeItem === 'Training'}
-							onClick={this.props.handleItemClick}>
+							onClick={this.handleItemClick}>
 							Training
 						</Menu.Item>
 						<Menu.Item
 							name="Team"
 							active={activeItem === 'Team'}
-							onClick={this.props.handleItemClick}>
+							onClick={this.handleItemClick}>
 							Team
 						</Menu.Item>
 						<Menu.Item>
@@ -76,4 +91,4 @@ class Nav extends Component {
 	}
 }
 
-export default Nav;
+export default withRouter(Nav);

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import services from '../assets/services.png';
 let parallax2 = {
 	backgroundImage: `url(${services})`,
@@ -13,9 +14,10 @@ let parallax2 = {
 };
 
 class Services extends Component {
+	redirectServices = () => this.props.history.push('/services');
 	render() {
 		return (
-			<div style={parallax2}>
+			<div style={parallax2} onClick={this.redirectServices}>
 				<div
 					className="title"
 					style={{
@@ -37,4 +39,4 @@ class Services extends Component {
 	}
 }
 
-export default Services;
+export default withRouter(Services);

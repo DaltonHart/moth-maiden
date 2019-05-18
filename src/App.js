@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
+import { Switch, Route } from 'react-router-dom';
 import Nav from './components/Nav/Nav';
 import Client from './components/Client/Client';
+import Services from './components/Services/Services';
 class App extends Component {
-	state = { activeItem: 'Home' };
-
-	handleItemClick = (e, { name }) => this.setState({ activeItem: name });
-
 	render() {
-		const { activeItem } = this.state;
-
 		return (
 			<div className="App">
-				<Nav handleItemClick={this.handleItemClick} activeItem={activeItem} />
-				<Client />
+				<Nav />
+				<Switch>
+					<Route exact path="/" render={() => <Client />} />
+					<Route path="/services" render={() => <Services />} />
+				</Switch>
 			</div>
 		);
 	}

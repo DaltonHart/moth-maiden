@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Header, Modal, Icon, Menu } from 'semantic-ui-react';
+import { Button, Header, Modal } from 'semantic-ui-react';
 
 const requirements = [
 	'I am over the age of 18.',
