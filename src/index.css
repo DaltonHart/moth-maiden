@@ -10,7 +10,7 @@
 }
 
 .App-header {
-  background-color: #f68746;
+  background-color: #b87333;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -96,7 +96,7 @@
   right: 3%;
   font-size: 1.5em;
   z-index: 200;
-  background-color: #ffc64f !important;
+  background-color: #b87333 !important;
   color: white !important;
   transition: all 0.2s ease-in-out;
   -webkit-box-shadow: -1px 6px 14px -1px #3d3b3d;
@@ -257,6 +257,15 @@
 
 .modalImg {
   width: 100%;
+}
+
+.carousel-slider {
+  height: 60vh !important;
+}
+
+.title:hover {
+  background-color: #000000b2;
+  cursor: pointer;
 }
 
 .student {

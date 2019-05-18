@@ -1,41 +1,30 @@
 import React, { Component } from 'react';
 import { Menu, Icon } from 'semantic-ui-react';
 
+import { Link, Element, Events, animateScroll as Scroll } from 'react-scroll';
+
 import moth from '../assets/moth.png';
+import Bookbutton from '../Client/Bookbutton';
 
 class Nav extends Component {
+	scrollToTop = () => {
+		Scroll.scrollToTop();
+	};
+
 	render() {
-		let companyname = `MOTH MAIDEN`;
 		const { activeItem } = this.props;
 
-		let subNav;
-
-		if (activeItem === 'Clients') {
-			subNav = (
-				<Menu className="subnav client" size="small">
-					<Menu.Item name="clientsub" />
-					<Menu.Menu position="right" />
-				</Menu>
-			);
-		} else if (activeItem === 'Students') {
-			subNav = (
-				<Menu className="subnav student" size="small">
-					<Menu.Item name="Student Sub" />
-					<Menu.Menu position="right" />
-				</Menu>
-			);
-		} else {
-			subNav = '';
-		}
-
 		let style = {
-			backgroundColor: '#ffc74f'
+			backgroundColor: '#b87333'
 		};
 
 		return (
 			<>
 				<Menu style={style} className="nav" size="small" fixed="top">
-					<Menu.Item>
+					<Menu.Item
+						name="Home"
+						active={activeItem === 'Home'}
+						onClick={this.scrollToTop}>
 						<img
 							src={moth}
 							style={{
@@ -43,24 +32,45 @@ class Nav extends Component {
 							}}
 							alt="logo"
 						/>
-						{companyname}
 					</Menu.Item>
 					<Menu.Menu position="right">
+						<Menu.Item
+							name="About"
+							active={activeItem === 'About'}
+							onClick={this.props.handleItemClick}>
+							<Link
+								style={{ color: 'white' }}
+								activeClass="active"
+								to="about"
+								smooth={true}
+								offset={-100}
+								duration={500}>
+								About
+							</Link>
+						</Menu.Item>
 						<Menu.Item
 							name="Clients"
 							active={activeItem === 'Clients'}
 							onClick={this.props.handleItemClick}>
-							<Icon name="tint" /> Services
+							Services
 						</Menu.Item>
 						<Menu.Item
-							name="Students"
-							active={activeItem === 'Students'}
+							name="Training"
+							active={activeItem === 'Training'}
 							onClick={this.props.handleItemClick}>
-							<Icon name="book" /> Training
+							Training
+						</Menu.Item>
+						<Menu.Item
+							name="Team"
+							active={activeItem === 'Team'}
+							onClick={this.props.handleItemClick}>
+							Team
+						</Menu.Item>
+						<Menu.Item>
+							<Bookbutton />
 						</Menu.Item>
 					</Menu.Menu>
 				</Menu>
-				{/* {subNav} */}
 			</>
 		);
 	}

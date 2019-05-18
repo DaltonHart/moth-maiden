@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Header, Modal, Icon } from 'semantic-ui-react';
+import { Button, Header, Modal, Icon, Menu } from 'semantic-ui-react';
 
 const requirements = [
 	'I am over the age of 18.',
@@ -82,13 +82,8 @@ class Bookbutton extends Component {
 		return (
 			<div className="bookbutton">
 				<Modal
-					trigger={
-						<Button onClick={this.show('small')} id="book">
-							Book Now
-							<Icon className="hand" name="hand point left" />
-						</Button>
-					}
-					dimmer="inverted"
+					trigger={<Button onClick={this.show('small')}>Book Now</Button>}
+					dimmer
 					onClose={this.close}
 					size={size}
 					open={open}>
