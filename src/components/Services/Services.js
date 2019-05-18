@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Segment, Card } from 'semantic-ui-react';
+import { Icon, Card, Button } from 'semantic-ui-react';
+
+import brow from '../assets/brows.png';
 
 let consult = [
 	{
@@ -118,27 +120,49 @@ class Services extends Component {
 			<Card>
 				<Card.Content>
 					<Card.Header>{service.name}</Card.Header>
-					<Card.Meta>{service.price}</Card.Meta>
 				</Card.Content>
 				<Card.Content>
 					<Card.Description>{service.desc}</Card.Description>
+				</Card.Content>
+				<Card.Content extra>
+					<Card.Header>{service.price}</Card.Header>
 				</Card.Content>
 			</Card>
 		));
 
 	render() {
+		let style = {
+			height: '10vh',
+			backgroundColor: 'black',
+			fontSize: '3em',
+			display: 'flex',
+			justifyContent: 'center',
+			alignItems: 'center',
+			textAlign: 'center',
+			color: 'white'
+		};
 		return (
-			<div style={{ marginTop: '7vh' }}>
-				<h1>Consultation</h1>
-				<Card.Group>{this.displayServices(consult)}</Card.Group>
-				<h1>Brows</h1>
-				<Card.Group>{this.displayServices(browServices)}</Card.Group>
-				<h1>Eyes</h1>
-				<Card.Group>{this.displayServices(eyeServices)}</Card.Group>
-				<h1>Touch Ups</h1>
-				<Card.Group>{this.displayServices(touchups)}</Card.Group>
-				<h1>Plasma</h1>
-				<Card.Group>{this.displayServices(plasmaServices)}</Card.Group>
+			<div style={{ margin: '5vh 0', color: 'white' }}>
+				<h1 style={style}>Consultation</h1>
+				<Card.Group style={{ padding: '1em' }} stackable>
+					{this.displayServices(consult)}
+				</Card.Group>
+				<h1 style={style}>Brows</h1>
+				<Card.Group style={{ padding: '1em' }} stackable>
+					{this.displayServices(browServices)}
+				</Card.Group>
+				<h1 style={style}>Eyes</h1>
+				<Card.Group style={{ padding: '1em' }} stackable>
+					{this.displayServices(eyeServices)}
+				</Card.Group>
+				<h1 style={style}>Touch Ups</h1>
+				<Card.Group style={{ padding: '1em' }} stackable>
+					{this.displayServices(touchups)}
+				</Card.Group>
+				<h1 style={style}>Plasma</h1>
+				<Card.Group style={{ padding: '1em' }} stackable>
+					{this.displayServices(plasmaServices)}
+				</Card.Group>
 			</div>
 		);
 	}

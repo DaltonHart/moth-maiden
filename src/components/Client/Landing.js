@@ -6,7 +6,7 @@ import Services from './Services';
 import Slider from './Slider';
 import Team from './Team';
 import Training from './Training';
-import Footer from './Footer';
+import Footer from '../Footer';
 import Divider from './Divider';
 
 class Landing extends Component {
@@ -33,12 +33,10 @@ class Landing extends Component {
 					<Services />
 					<Divider />
 					{/* Training */}
-
 					<Training />
 					<Divider />
 					{/* Team */}
 					<Team />
-					{/* Footer */}
 					<Footer />
 				</div>
 			</div>
