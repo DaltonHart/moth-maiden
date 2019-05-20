@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
 import one from '../assets/parrOne.png';
 let parallax4 = {
@@ -13,27 +14,33 @@ let parallax4 = {
 	alignItems: 'center'
 };
 
-const Team = () => {
-	return (
-		<div style={parallax4}>
-			<div
-				className="title"
-				style={{
-					border: '1em solid white',
-					color: 'white',
-					padding: '2em',
-					width: '70%',
-					height: '70%',
-					display: 'flex',
-					justifyContent: 'center',
-					alignItems: 'center'
-				}}>
-				<p style={{ fontSize: '7em', textShadow: '5px 5px 5px #000000' }}>
-					Team
-				</p>
+class Team extends Component {
+	redirectTeam = () => {
+		this.props.history.push('/team');
+	};
+	render() {
+		return (
+			<div style={parallax4}>
+				<div
+					className="title"
+					style={{
+						border: '1em solid white',
+						color: 'white',
+						padding: '2em',
+						width: '70%',
+						height: '70%',
+						display: 'flex',
+						justifyContent: 'center',
+						alignItems: 'center'
+					}}
+					onClick={this.redirectTeam}>
+					<p style={{ fontSize: '7em', textShadow: '5px 5px 5px #000000' }}>
+						Team
+					</p>
+				</div>
 			</div>
-		</div>
-	);
-};
+		);
+	}
+}
 
-export default Team;
+export default withRouter(Team);

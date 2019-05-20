@@ -22,6 +22,10 @@ class Nav extends Component {
 		this.props.history.push('/services');
 	};
 
+	redirectTeam = () => {
+		this.props.history.push('/team');
+	};
+
 	render() {
 		const { activeItem, location } = this.props;
 
@@ -45,6 +49,9 @@ class Nav extends Component {
 							}}
 							alt="logo"
 						/>
+					</Menu.Item>
+					<Menu.Item>
+						<Bookbutton />
 					</Menu.Item>
 					<Menu.Menu position="right">
 						<Menu.Item
@@ -78,11 +85,8 @@ class Nav extends Component {
 						<Menu.Item
 							name="Team"
 							active={activeItem === 'Team'}
-							onClick={this.handleItemClick}>
+							onClick={this.redirectTeam}>
 							Team
-						</Menu.Item>
-						<Menu.Item>
-							<Bookbutton />
 						</Menu.Item>
 					</Menu.Menu>
 				</Menu>
