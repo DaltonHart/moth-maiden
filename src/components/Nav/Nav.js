@@ -30,7 +30,8 @@ class Nav extends Component {
 		const { activeItem, location } = this.props;
 
 		let style = {
-			backgroundColor: '#b87333'
+			backgroundColor: '#b87333',
+			fontFamily: 'Volkhov, serif'
 		};
 
 		return (

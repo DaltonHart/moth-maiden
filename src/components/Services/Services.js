@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { Icon, Card, Button, Divider } from 'semantic-ui-react';
+import { Card, Divider, Segment, Header } from 'semantic-ui-react';
 import Footer from '../Footer';
-
-import brow from '../assets/brows.png';
 
 let consult = [
 	{
@@ -120,28 +118,54 @@ class Services extends Component {
 		services.map(service => (
 			<Card>
 				<Card.Content style={{ background: 'whitesmoke' }}>
-					<Card.Header textAlign="center">{service.name}</Card.Header>
+					<Segment
+						style={{
+							color: 'black',
+							margin: 'auto',
+							fontSize: '1.5em',
+							textAlign: 'center'
+						}}>
+						{service.name}
+					</Segment>
 				</Card.Content>
 				<Card.Content>
 					<Card.Description>{service.desc}</Card.Description>
 				</Card.Content>
 				<Card.Content extra style={{ background: 'whitesmoke' }}>
-					<Card.Header textAlign="center">{service.price}</Card.Header>
+					<Segment
+						style={{
+							color: 'black',
+							margin: 'auto',
+							fontSize: '1.5em',
+							textAlign: 'center'
+						}}>
+						{service.price}
+					</Segment>
 				</Card.Content>
 			</Card>
 		));
 
 	render() {
 		let style = {
-			fontSize: '3em'
+			fontSize: '3em',
+			fontFamily: 'Volkhov, serif',
+			color: 'white',
+			textShadow: '2px 2px 4px #444'
 		};
 		return (
 			<>
-				<div style={{ margin: '5vh 0', color: 'white' }}>
+				<div
+					style={{
+						paddingTop: '5vh',
+						color: 'black',
+						backgroundImage:
+							'linear-gradient(to bottom, #b87333 , whitesmoke, #b87333)'
+					}}>
 					{/* <h1 style={style}>Consultation</h1> */}
 					<Divider style={{ ...style, marginTop: '1.5em' }} horizontal>
-						Consultation
+						CONSULTATION
 					</Divider>
+
 					<Card.Group centered style={{ padding: '6em' }} stackable>
 						{this.displayServices(consult)}
 					</Card.Group>

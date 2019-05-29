@@ -1,6 +1,5 @@
 import React from 'react';
-import { Grid, List } from 'semantic-ui-react';
-import { relative } from 'path';
+import { Grid, List, Button, Icon, GridRow } from 'semantic-ui-react';
 
 const Footer = () => {
 	return (
@@ -46,7 +45,17 @@ const Footer = () => {
 							/>
 						</List>
 					</Grid.Column>
-					<Grid.Column>Social media</Grid.Column>
+					<Grid.Column>
+						<Grid.Row>Join us on Social media!</Grid.Row>
+						<Grid.Row>
+							<a href="https://www.facebook.com/microbladingbymaddie">
+								<Button color="facebook" icon="facebook" />
+							</a>
+							<a href="https://www.instagram.com/fresnomicroblading/">
+								<Button color="instagram" icon="instagram" />
+							</a>
+						</Grid.Row>
+					</Grid.Column>
 					<Grid.Column>Address</Grid.Column>
 				</Grid.Row>
 			</Grid>

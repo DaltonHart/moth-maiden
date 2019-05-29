@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Lato");
+@import url("https://fonts.googleapis.com/css?family=Volkhov&display=swap");
 .App {
   height: 100vh;
 }
@@ -266,6 +267,10 @@
 .title:hover {
   background-color: #000000b2;
   cursor: pointer;
+}
+
+.servicesHeader {
+  font-family: "Volkhov", serif;
 }
 
 .student {
