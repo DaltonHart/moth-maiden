@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Icon, Card, Button } from 'semantic-ui-react';
+import { Icon, Card, Button, Divider } from 'semantic-ui-react';
+import Footer from '../Footer';
 
 import brow from '../assets/brows.png';
 
@@ -118,52 +119,64 @@ class Services extends Component {
 	displayServices = services =>
 		services.map(service => (
 			<Card>
-				<Card.Content>
-					<Card.Header>{service.name}</Card.Header>
+				<Card.Content style={{ background: 'whitesmoke' }}>
+					<Card.Header textAlign="center">{service.name}</Card.Header>
 				</Card.Content>
 				<Card.Content>
 					<Card.Description>{service.desc}</Card.Description>
 				</Card.Content>
-				<Card.Content extra>
-					<Card.Header>{service.price}</Card.Header>
+				<Card.Content extra style={{ background: 'whitesmoke' }}>
+					<Card.Header textAlign="center">{service.price}</Card.Header>
 				</Card.Content>
 			</Card>
 		));
 
 	render() {
 		let style = {
-			height: '10vh',
-			backgroundColor: 'black',
-			fontSize: '3em',
-			display: 'flex',
-			justifyContent: 'center',
-			alignItems: 'center',
-			textAlign: 'center',
-			color: 'white'
+			fontSize: '3em'
 		};
 		return (
-			<div style={{ margin: '5vh 0', color: 'white' }}>
-				<h1 style={style}>Consultation</h1>
-				<Card.Group style={{ padding: '1em' }} stackable>
-					{this.displayServices(consult)}
-				</Card.Group>
-				<h1 style={style}>Brows</h1>
-				<Card.Group style={{ padding: '1em' }} stackable>
-					{this.displayServices(browServices)}
-				</Card.Group>
-				<h1 style={style}>Eyes</h1>
-				<Card.Group style={{ padding: '1em' }} stackable>
-					{this.displayServices(eyeServices)}
-				</Card.Group>
-				<h1 style={style}>Touch Ups</h1>
-				<Card.Group style={{ padding: '1em' }} stackable>
-					{this.displayServices(touchups)}
-				</Card.Group>
-				<h1 style={style}>Plasma</h1>
-				<Card.Group style={{ padding: '1em' }} stackable>
-					{this.displayServices(plasmaServices)}
-				</Card.Group>
-			</div>
+			<>
+				<div style={{ margin: '5vh 0', color: 'white' }}>
+					{/* <h1 style={style}>Consultation</h1> */}
+					<Divider style={{ ...style, marginTop: '1.5em' }} horizontal>
+						Consultation
+					</Divider>
+					<Card.Group centered style={{ padding: '6em' }} stackable>
+						{this.displayServices(consult)}
+					</Card.Group>
+					{/* <h1 style={style}>Brows</h1> */}
+					<Divider style={style} horizontal>
+						Brows
+					</Divider>
+					<Card.Group centered style={{ padding: '6em' }} stackable>
+						{this.displayServices(browServices)}
+					</Card.Group>
+					{/* <h1 style={style}>Eyes</h1> */}
+					<Divider style={style} horizontal>
+						Eyes
+					</Divider>
+					<Card.Group centered style={{ padding: '6em' }} stackable>
+						{this.displayServices(eyeServices)}
+					</Card.Group>
+					{/* <h1 style={style}>Touch Ups</h1> */}
+					<Divider style={style} horizontal>
+						Touch Ups
+					</Divider>
+					<Card.Group centered style={{ padding: '6em' }} stackable>
+						{this.displayServices(touchups)}
+					</Card.Group>
+					{/* <h1 style={style}>Plasma</h1>
+					 */}
+					<Divider style={style} horizontal>
+						Plasma
+					</Divider>
+					<Card.Group centered style={{ padding: '6em' }} stackable>
+						{this.displayServices(plasmaServices)}
+					</Card.Group>
+				</div>
+				<Footer />
+			</>
 		);
 	}
 }

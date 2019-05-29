@@ -15,7 +15,6 @@ class App extends Component {
 					<Route path="/services" render={() => <Services />} />
 					<Route path="/team" render={() => <Team />} />
 				</Switch>
-				<Footer />
 			</div>
 		);
 	}

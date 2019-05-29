@@ -1,5 +1,6 @@
 import React from 'react';
 import { Grid, Image, Card } from 'semantic-ui-react';
+import Footer from '../Footer';
 
 import maddie from '../assets/maddie.png';
 import ashley from '../assets/ashley.png';
@@ -44,9 +45,12 @@ const displayTeam = members =>
 
 const Team = () => {
 	return (
-		<div style={{ margin: '7vh 2vw' }}>
-			<Card.Group centered>{displayTeam(members)}</Card.Group>
-		</div>
+		<>
+			<div style={{ margin: '7vh 2vw' }}>
+				<Card.Group centered>{displayTeam(members)}</Card.Group>
+			</div>
+			<Footer />
+		</>
 	);
 };
 
