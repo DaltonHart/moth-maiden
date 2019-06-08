@@ -6,7 +6,6 @@ import Services from './Services';
 import Slider from './Slider';
 import Team from './Team';
 import Training from './Training';
-import Footer from '../Footer';
 import Divider from './Divider';
 
 class Landing extends Component {

@@ -3,9 +3,8 @@ import { withRouter } from 'react-router-dom';
 
 import Footer from '../Footer';
 
-import one from '../assets/parrOne.png';
 let parallax4 = {
-	backgroundImage: `url(${one})`,
+	backgroundImage: `url()`,
 	height: '70vh',
 	backgroundAttachment: 'fixed',
 	backgroundPosition: 'center',
